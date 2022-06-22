@@ -82,7 +82,7 @@ var config = {
 		},
 		{
 			module: "compliments",
-			position: "top_left",
+			position: "middle_center",
 			config: {
 				compliments:{
 					"....-03-10": [
@@ -155,6 +155,10 @@ var config = {
 					},
 				]
 			},
+		},
+		{
+			module: "newsfeed",
+			position: "top_left"
 		},
 	]
 };
