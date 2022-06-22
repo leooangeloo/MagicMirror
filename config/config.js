@@ -38,6 +38,13 @@ var config = {
 	// true, force serveronly mode, because you want to.. no UI on this device
 
 	modules: [
+		// Uncomment to use MMM-SalesCounter module
+		// {
+		// 	module: "MMM-SalesCounter",
+		// 	header: "JSJ Crochets Sales",
+		// 	position: "top_right",
+		// 	config: {}
+		// },
 		{
 			module: "clock",
 			position: "top_left"
@@ -106,6 +113,48 @@ var config = {
 					]
 				}			
 			}
+		},
+		{
+			module: 'MMM-Worldclock',
+			position: 'top_left', // This can be any of the regions, best in top_left or top_right regions
+			config: {
+				// See 'Configuration options' for more information.
+				timeFormat: 'hh:mm A', //Global time format, as defined in moment.js format()
+				style: 'top', // Which way do you want the flag and description from the clock? choices are 'top', 'left','right','bottom'
+				offsetTimezone: null, // Timezone you want to show the difference from. null, "", or omitted from config will be UTC.
+				clocks: [
+					{
+						title: "Seattle", // Too long of a title could cause bad text align.
+						timezone: "America/Los_Angeles", //When omitted, Local time will be displayed. 
+						timeFormat: "HH:mm:ss.SSS A", // Time format override.
+						flag: "us", // If you'd like a flag from the standard library 
+					},
+					{
+						title: "New York", // Too long of a title could cause bad text align.
+						timezone: "America/New_York", //When omitted, Local time will be displayed. 
+						timeFormat: "HH:mm:ss.SSS A", // Time format override.
+						flag: "us", // If you'd like a flag from the standard library 
+					},
+					{
+						title: "UTC",
+						timezone: "UTC",
+						timeFormat: "HH:mm:ss.SSS A", // Time format override. 
+						altflag: "world.png" // if you'd like a flag from a file on your mirror device. 
+					},
+					{
+						title: "London",
+						timezone: "Europe/London",
+						timeFormat: "HH:mm:ss.SSS A", // Time format override.
+						flag: "gb"
+					},
+					{
+						title: "Hong Kong",
+						timezone: "Asia/Hong_Kong",
+						timeFormat: "HH:mm:ss.SSS A", // Time format override.
+						flag: "hk"
+					},
+				]
+			},
 		},
 	]
 };
